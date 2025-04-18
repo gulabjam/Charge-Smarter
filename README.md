@@ -148,8 +148,7 @@
 
 ## 🧑‍💻 Contributors
 
-- [Your Name](https://github.com/your-username) – Developer  
-- [Video demonstration link](https://youtu.be/ykU6HiN6xMM)
+- [Bhavin Biju](https://github.com/your-username) – Developer  
 
 ---
 # Charge-Smarter
