@@ -3,7 +3,7 @@
 ### [Charge Smarter](https://youtu.be/ykU6HiN6xMM) 
 
 ## Description
-Charge Smarter is a minimalist EV companion app that helps drivers quickly find and navigate to the nearest charging stations. Featuring a real-time battery dashboard that monitors your charge level, the app automatically suggests optimal stations based on your remaining range. Its clean map interface renders efficient routes while displaying station locations, availability, and basic details. Designed for speed and simplicity, Charge Smarter eliminates range anxiety by providing just the essentials—no clutter, just reliable routing when you need it most. Perfect for daily commuters and road trippers alike. ⚡🗺️
+Charge Smarter is your essential EV companion, combining real-time battery monitoring with intelligent charging station navigation. The app features a sleek dashboard displaying your current charge level, estimated range, and consumption patterns. Our advanced routing algorithm automatically calculates and directs you to the nearest compatible charging station based on your vehicle's remaining battery life. The interactive map renders stations with color-coded availability indicators and key details like connector types. For trip planning, simply set your destination to see optimal charging stops along your route. With offline map support and quick-loading station data, Charge Smarter delivers reliable assistance whether you're commuting daily or embarking on cross-country adventures. Lightweight yet powerful, it's the no-fuss solution to eliminate range anxiety and keep you moving
 
 ## 🛠️ Technology Stack
 
