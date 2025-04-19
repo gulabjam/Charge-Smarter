@@ -21,7 +21,7 @@ class _FlutterMapState extends State<FlutterMap> {
   LatLng? _currentP;
   Set<Marker> _markers = {};
   List<LatLng> _routePoints = [];
-  static const String _apikey = "AIzaSyBx47vpc5pZcM2jMWGWFLs_z6vHB0Esty0";
+  static const String _apikey = "";
 
   @override
   void initState() {
