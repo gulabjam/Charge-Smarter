@@ -1,0 +1,81 @@
+#include <Servo.h>
+int in1 = 9;
+int in2 = 10;
+int speed = 11;
+int IR_SENSOR = 7;
+int moisture_sensor = 4; 
+int servopin = 3;
+int servopin1 = 5;
+int servopin2 = 6;
+int metal = 8;
+Servo myservo;
+Servo myservo1;
+Servo myservo2;
+int temp = 0;
+void setup() {
+  Serial.begin(9600);
+  pinMode (in1, OUTPUT);
+  pinMode (in2, OUTPUT);
+  pinMode (speed, INPUT);
+  pinMode (moisture_sensor, INPUT);
+  pinMode (IR_SENSOR, INPUT);
+                digitalWrite (in1, HIGH);
+  digitalWrite (in2, LOW);
+  analogWrite (speed, 255);
+  pinMode (metal, INPUT);
+  myservo.attach (servopin);
+  myservo1.attach (servopin1);
+  myservo2.attach (servopin2);
+  }
+void loop() {
+  if (digitalRead(metal) == HIGH){
+    ConveyorStop();
+    delay(750);
+    ConveyorRun();
+    delay(400);
+    ConveyorStop();
+    myservo.write(180);
+    delay(400);
+  }
+  else{
+    ConveyorRun();
+    myservo.write(0);
+  }
+  if (digitalRead(IR_SENSOR) == LOW){
+    delay (1000);
+    ConveyorStop();
+    myservo1.write (90);
+    if (digitalRead(moisture_sensor) == LOW)
+      temp = 1;
+    delay (1000);
+    myservo1.write(0);
+    ConveyorRun();
+    delay(200);
+    if (temp == 1){
+      ConveyorStop();
+      myservo2.write(0);
+      delay(400);
+      myservo2.write(180);
+      ConveyorRun();
+    }
+    else
+      myservo2.write(180);
+    temp = 0;      
+  }
+  else{
+    ConveyorRun();
+    myservo1.write(0);
+  }
+}
+void ConveyorRun(){
+  digitalWrite (in1, HIGH);
+  digitalWrite (in2, LOW);
+  analogWrite (speed, 255);
+}
+void ConveyorStop(){
+  digitalWrite (in1, LOW);
+  digitalWrite (in2, LOW);
+  analogWrite (speed, 0);
+}
+
+

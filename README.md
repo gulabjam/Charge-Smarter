@@ -1,22 +1,16 @@
-# Charge-Smarter
-## Video Demo :
-### [Charge Smarter](https://youtu.be/ykU6HiN6xMM) 
+# sample_app
 
-## Description
-An app to find your nearest ev charging station
+A new Flutter project.
 
-## 🛠️ Technology Stack
+## Getting Started
 
-- **Frontend**: Dart, Flutter
-- **Backend**: Firebase (Authentication, Firestore, Storage)
+This project is a starting point for a Flutter application.
 
-## 📈 Impact & Scalability
-- Helps users keep track of their vehicle charge levels
-- Routes to the nearest EV charging Stations
+A few resources to get you started if this is your first Flutter project:
 
-## 📋 Prerequisites
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-- flutter 
-- Firebase account
-
-
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.

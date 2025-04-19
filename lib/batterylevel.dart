@@ -52,6 +52,9 @@ class _MyHomePageState extends State<BatteryLevel> {
 
   @override
   Widget build(BuildContext context) {
+    // Calculate estimated range based on battery percentage
+    var batteryRange = "${(showBatterLevel * 2.52).toStringAsFixed(1)} km";
+
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -119,43 +122,57 @@ class _MyHomePageState extends State<BatteryLevel> {
                   ],
                 ),
               ),
+              // New widget for displaying range
               Container(
-                  padding: EdgeInsets.all(20),
-                  width: MediaQuery.of(context).size.width * 0.85,
-                  height: MediaQuery.of(context).size.height * 0.4,
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        batteryContainer(
-                            70,
-                            Icons.power,
-                            40,
-                            showBatterLevel <= 10 ? COLOR_RED : COLOR_GREEN,
-                            state == BatteryState.charging),
-                        batteryContainer(
-                            70,
-                            Icons.power_off,
-                            40,
-                            showBatterLevel <= 10 ? COLOR_RED : COLOR_GREEN,
-                            state == BatteryState.discharging),
-                        batteryContainer(
-                            70,
-                            Icons.battery_charging_full,
-                            40,
-                            showBatterLevel <= 10 ? COLOR_RED : COLOR_GREEN,
-                            state == BatteryState.full),
-                      ],
-                    ),
-                  )),
+                margin: EdgeInsets.only(top: 20),
+                child: Text(
+                  "Estimated Range: $batteryRange",
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Color.fromARGB(255, 0, 169, 181),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(20),
+                width: MediaQuery.of(context).size.width * 0.85,
+                height: MediaQuery.of(context).size.height * 0.4,
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      batteryContainer(
+                          70,
+                          Icons.power,
+                          40,
+                          showBatterLevel <= 10 ? COLOR_RED : COLOR_GREEN,
+                          state == BatteryState.charging),
+                      batteryContainer(
+                          70,
+                          Icons.power_off,
+                          40,
+                          showBatterLevel <= 10 ? COLOR_RED : COLOR_GREEN,
+                          state == BatteryState.discharging),
+                      batteryContainer(
+                          70,
+                          Icons.battery_charging_full,
+                          40,
+                          showBatterLevel <= 10 ? COLOR_RED : COLOR_GREEN,
+                          state == BatteryState.full),
+                    ],
+                  ),
+                ),
+              ),
               Container(
                 child: TextButton(
                   onPressed: () async {
                     Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const FlutterMap()));
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const FlutterMap()),
+                    );
                   },
                   child: Text(
                     'Route To your nearest charging station',
