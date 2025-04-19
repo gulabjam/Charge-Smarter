@@ -49,3 +49,4 @@ app.*.map.json
 build
 .gradle/
 .gradle/
+firebase-tools-instant-win.exe
